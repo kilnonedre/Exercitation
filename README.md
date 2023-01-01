@@ -53,7 +53,7 @@ npm run dev
 
 ##### 4.1 Stock Trader页面
 
-![image-20230101093718119](C:\Users\食梦者nncwtz\AppData\Roaming\Typora\typora-user-images\image-20230101093718119.png)
+![image-20230101093718119](https://github.com/kilnonedre/Exercitation/blob/main/public/typora-user-images/image-20230101093718119.png)
 
 此页面主要是介绍了一下整个游戏的游玩模式，和一些基本按键的使用方式，以及玩家刚开始的可使用资金$10000。
 
