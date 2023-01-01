@@ -1,5 +1,5 @@
 <template>
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-6 col-md-4" v-show="stock.quantity>0">
         <div class="card text-bg-info mb-3">
             <div class="card-header">
                 {{stock.name}}
@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
 export default{
     props:['stock'],
     data(){
@@ -32,16 +31,16 @@ export default{
         }
     },
     methods:{
-        ...mapActions({
-            placeSellOrder : 'sellStock'
-        }),
         sellStock(){
             const order={
                 stockId:this.stock.id,
                 stockPrice:this.stock.price,
                 quantity:this.quantity
             };
-            this.placeSellOrder(order);
+            this.stock.quantity-=this.quantity;
+            // this.placeSellOrder(order);
+            this.$emit('sellStocks',this.quantity*this.stock.price);
+
             this.quantity=0;
         }
     }

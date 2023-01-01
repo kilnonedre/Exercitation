@@ -11,6 +11,7 @@
                 </div>
                 <div class="float-end">
                     <button class="btn btn-secondary" @click="buyStock" :disabled="insufficientFunds || quantity <= 0 || !Number.isInteger(parseFloat(quantity))">{{insufficientFunds?'Insufficient Funds':'Buy'}}</button>
+                    <!-- <button class="btn btn-secondary" @click="buyStock" :disabled="insufficientFunds || quantity <= 0 || !Number.isInteger(parseFloat(quantity))">{{insufficientFunds?'Insufficient Funds':'Buy'}}</button> -->
                 </div>
             </div>
         </div>
@@ -27,16 +28,15 @@
 
 <script>
 export default{
-    props:['stock'],
+    props:['stock','funds'],
     data(){
         return{
+            fund: this.funds,
             quantity: 0
         }
     },
     computed:{
-        funds(){
-            return this.$store.getters.funds;
-        },
+
         insufficientFunds(){
             return this.quantity * this.stock.price > this.funds;
         }
@@ -49,7 +49,9 @@ export default{
                 quantity:this.quantity
             };
             console.log(order);
-            this.$store.dispatch('buyStocks',order);
+            this.stock.quantity+=parseFloat(this.quantity);
+            this.fund-=this.quantity*this.stock.price;
+            this.$emit('buyStocks',this.fund);
             this.quantity=0;
         }
     }

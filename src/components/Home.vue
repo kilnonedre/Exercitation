@@ -11,11 +11,7 @@
 <script>
 
 export default{
-    computed:{
-        funds(){
-            return this.$store.getters.funds;
-        }
-    }
+  props:['funds'],
 }
 
 </script>

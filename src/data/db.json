@@ -1,0 +1,65 @@
+{
+  "funds": [
+    {
+      "funds": 10000
+    }
+  ],
+  "stocks": [
+    {
+      "id": 1,
+      "name": "BWM",
+      "price": 110,
+      "quantity": 0
+    },
+    {
+      "id": 2,
+      "name": "Google",
+      "price": 200,
+      "quantity": 0
+    },
+    {
+      "id": 3,
+      "name": "Apple",
+      "price": 250,
+      "quantity": 0
+    },
+    {
+      "id": 4,
+      "name": "Twtter",
+      "price": 8,
+      "quantity": 0
+    }
+  ],
+  "stocksSave": [
+    {
+      "name": "BWM",
+      "price": 110,
+      "quantity": 5,
+      "id": 1
+    },
+    {
+      "name": "Google",
+      "price": 200,
+      "quantity": 0,
+      "id": 2
+    },
+    {
+      "name": "Apple",
+      "price": 250,
+      "quantity": 0,
+      "id": 3
+    },
+    {
+      "name": "Twtter",
+      "price": 8,
+      "quantity": 0,
+      "id": 4
+    }
+  ],
+  "fundsSave": [
+    {
+      "funds": 9450,
+      "id": 1
+    }
+  ]
+}

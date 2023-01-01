@@ -16,8 +16,8 @@
             Save & Load
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Save</a></li>
-            <li><a class="dropdown-item" href="#">Load</a></li>
+            <li><a class="dropdown-item" @click="save">Save</a></li>
+            <li><a class="dropdown-item" @click="load">Load</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -31,21 +31,34 @@
 </template>
 
 <script>
-  import {mapActions} from 'vuex';
+import axios from 'axios';
 
 export default{
+  props:['stocks','funds'],
   computed:{
-        funds(){
-            return this.$store.getters.funds;
-        }
     },
     methods:{
-      ...mapActions([
-        'randomizeStocks'
-      ]),
       endDay(){
-        this.randomizeStocks();
+        this.stocks.forEach(stock => {
+            stock.price = Math.round(stock.price * (1 + Math.random() - 0.5));
+        });
+      },
+      save(){
+        console.log(this.stocks)
+        this.stocks.forEach((stock)=>{
+          axios.put('http://localhost:3000/stocksSave/'+stock.id, {
+            "name": stock.name,
+            "price": stock.price,
+            "quantity": stock.quantity
+        })
+        });
+        axios.put('http://localhost:3000/fundsSave/1',{
+          "funds":this.funds})
+      },
+      load(){
+        this.$emit('load');
       }
+      
     }
 }
 

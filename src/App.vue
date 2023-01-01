@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <app-header></app-header>
+    <app-header :stocks="stocks" :funds="funds" @load='load'></app-header>
     <transition name="slide" mode="out-in">
-    <router-view></router-view>
+    <router-view :stocks="stocks" :funds="funds" @updataFund="updataFund"></router-view>
 
     </transition>
 
@@ -11,13 +11,47 @@
 
 <script>
 import Header from './components/Header.vue';
+import axios from 'axios';
+
+
 
 export default {
+  data(){
+    return {
+      funds: 0,
+      stocks: []
+    }
+  },
   components:{
     appHeader: Header
   },
+  methods:{
+    updataFund(data){
+      this.funds=data;
+    },
+    test(){
+      axios.get('http://localhost:3000/stocks')
+        .then((response)=> {
+          this.stocks=response.data;
+        }),
+      axios.get('http://localhost:3000/funds')
+        .then((response)=> {
+          this.funds=response.data[0].funds;
+        })
+      },
+      load(){
+        axios.get('http://localhost:3000/stocksSave')
+        .then((response)=> {
+          this.stocks=response.data;
+        }),
+      axios.get('http://localhost:3000/fundsSave')
+        .then((response)=> {
+          this.funds=response.data[0].funds;
+        })
+      }
+  },
   created(){
-    this.$store.dispatch('initStocks');
+    this.test();
   }
 }
 </script>
