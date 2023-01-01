@@ -59,23 +59,23 @@ npm run dev
 
 ##### 4.2 Stocks页面
 
-![image-20230101094248747](C:\Users\食梦者nncwtz\AppData\Roaming\Typora\typora-user-images\image-20230101094248747.png)
+![image-20230101094248747](https://github.com/kilnonedre/Exercitation/blob/main/public/typora-user-images/image-20230101094248747.png)
 
 在此页面玩家可以在 **Funds** 可支付的条件下自由的购买股票。前提是股票为整数，不小于0，且所花费的资金小于 **Funds**。否则，无法点击 **Buy** 按钮，而且按钮会变成 **Insufficient Funds**。
 
-![image-20230101094602841](C:\Users\食梦者nncwtz\AppData\Roaming\Typora\typora-user-images\image-20230101094602841.png)
+![image-20230101094602841](https://github.com/kilnonedre/Exercitation/blob/main/public/typora-user-images/image-20230101094602841.png)
 
 ##### 4.3 Portfolio页面
 
-![image-20230101094654122](C:\Users\食梦者nncwtz\AppData\Roaming\Typora\typora-user-images\image-20230101094654122.png)
+![image-20230101094654122](https://github.com/kilnonedre/Exercitation/blob/main/public/typora-user-images/image-20230101094654122.png)
 
 当玩家在 **Stocks** 页面购买股票之后，在本页面中会显现出玩家购买的股票及数量。玩家也能在本页面对股票进行出售操作，当然，前提是股票为整数，不小于0，且所出售的数量小于 **Quantity**。否则，无法点击 Sell 按钮，而且按钮会变成 **Not Enough**。
 
-![image-20230101094913838](C:\Users\食梦者nncwtz\AppData\Roaming\Typora\typora-user-images\image-20230101094913838.png)
+![image-20230101094913838](https://github.com/kilnonedre/Exercitation/blob/main/public/typora-user-images/image-20230101094913838.png)
 
 ##### 4.4 End Day 按钮、Save按钮与Load按钮
 
-![image-20230101095112524](C:\Users\食梦者nncwtz\AppData\Roaming\Typora\typora-user-images\image-20230101095112524.png)
+![image-20230101095112524](https://github.com/kilnonedre/Exercitation/blob/main/public/typora-user-images/image-20230101095112524.png)
 
 为了模拟真实的股票交易环节，我们特地设计了 **End Day** 按钮来供玩家实时更改每只股票的股价。
 
