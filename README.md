@@ -45,7 +45,7 @@ npm run dev
 
 > 在 **main** 仓库中，使用的是 **vuex** 进行数据的统一管理
 >
-> 在 *xxx* 仓库中，使用的是传统的组件化开发的模式，即props与$emit的传值方式。而且还使用了 **axios** 与 **json server** 实现了本地化的数据增删改查。
+> 在 **develop** 仓库中，使用的是传统的组件化开发的模式，即props与$emit的传值方式。而且还使用了 **axios** 与 **json server** 实现了本地化的数据增删改查。
 
 ### 4、stock项目实现的主要功能
 
